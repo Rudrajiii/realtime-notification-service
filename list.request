@@ -1,0 +1,5 @@
+curl -X POST http://localhost:8000/notify -H "Content-Type: application/json" -d '{"user_id":1,"msg":"Hello"}'
+
+$headers = @{"Content-Type"="application/json"}
+$body = @{user_id=10; msg="Hello 10"} | ConvertTo-Json
+Invoke-WebRequest -Uri "http://localhost:8000/notify" -Method POST -Headers $headers -Body $body
